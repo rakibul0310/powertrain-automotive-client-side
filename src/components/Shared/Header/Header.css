@@ -1,0 +1,8 @@
+.menu a {
+    border-bottom: 2px solid #0D1B26;
+}
+
+.menu a:hover {
+    background-color: #363c47;
+    border-bottom: 2px solid #18D775;
+}
