@@ -10,7 +10,7 @@ const ContactUs = () => {
     }
     return (
         <div className='flex flex-col justify-center items-center mt-10 mb-14'>
-            <h2 className='text-4xl font-bold underline decoration-secondary'>Contact With Us</h2>
+            <h2 className='text-4xl font-bold underline decoration-secondary'>Contact Us</h2>
             <form onSubmit={handleContact} className='flex flex-col w-3/4 md:w-1/4'>
                 <label className='text-lg mt-5 text-left' htmlFor="name">Name</label>
                 <input className='h-10 pl-3 outline-primary border-[1px] border-gray-200' type="text" name="name" id="name" placeholder='Enter your full name' required />

@@ -7,6 +7,7 @@ const Header = () => {
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/technologies">Technologies</Link></li>
+        <li><Link to="/investorrelations">Investor Relations</Link></li>
         <li><Link to="/contact">Contact</Link></li>
         <li><Link to="/about">About</Link></li>
     </>
@@ -32,7 +33,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/" className="btn text-base-100">Login</Link>
+                <Link to="/" className="btn btn-secondary text-base-100">Login</Link>
             </div>
         </div>
     );

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import InvestorRelations from '../InvestorRelations/InvestorRelations';
+import Notices from '../Notices/Notices';
 import Technologies from '../Technologies/Technologies';
 import Business from './Business/Business';
 import Reviews from './Reviews/Reviews';
@@ -26,6 +28,8 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <InvestorRelations />
+            <Notices />
         </div>
     );
 };
