@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Parts from '../Parts/Parts';
+import Business from './Business/Business';
 import TopBanner from './TopBanner/TopBanner';
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
                     }
                 </div>
             </div>
+            <Business />
         </div>
     );
 };
