@@ -24,7 +24,7 @@ const Header = () => {
                 </div>
                 <div className="normal-case text-2xl font-bold flex flex-col">
                     <Link to="/">Powertrain</Link>
-                    <span className='text-xs font-thin'>manufacturer industry</span>
+                    <span className='text-xs font-thin'>manufacturer Co.</span>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

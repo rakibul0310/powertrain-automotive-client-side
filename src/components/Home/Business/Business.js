@@ -8,9 +8,9 @@ import { faFlag, faHandshake, faUser, faComment } from '@fortawesome/free-regula
 const Business = () => {
 
     return (
-        <div className='bg-primary py-5'>
-            <h1 className='text-3xl font-bold text-base-100 underline decoration-secondary text-center my-9'>Business summery</h1>
-            <div className='bg-primary h-[700px] lg:h-[300px] text-2xl md:text-4xl text-base-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
+        <div className='bg-[#eae8e6] py-5'>
+            <h1 className='text-3xl font-bold text-primary underline decoration-secondary text-center my-9'>Business summery</h1>
+            <div className='bg-[#eae8e6] h-[700px] lg:h-[300px] text-2xl md:text-4xl text-accent grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                 <div className="flex flex-col justify-center items-center">
                     <div className='text-secondary mb-2'>
                         <FontAwesomeIcon icon={faFlag} />
