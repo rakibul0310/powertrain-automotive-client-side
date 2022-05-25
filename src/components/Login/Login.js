@@ -2,6 +2,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Loading from '../Shared/Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -18,6 +20,8 @@ const Login = () => {
                 <input className='input input-bordered input-success w-full max-w-xs' type="password" id='password' name='password' placeholder='password' {...register("password", { required: true })} />
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input className='btn btn-secondary mt-3 w-full max-w-xs text-base-100' type="submit" value="Login" />
+                <Link to="/forgotpassword"><span className='text-sm mt-1 text-blue-500 underline decoration-blue-500'>Forgot password?</span></Link>
+                <span className='text-sm'>Don't have any account? <Link to="/register"><button className='text-blue-500 underline decoration-blue-500'>register</button></Link></span>
             </form>
             <div className='mt-8'>
                 <div className='flex justify-center items-center'>
@@ -26,7 +30,7 @@ const Login = () => {
                     <div className='w-[80px] h-[3px] bg-slate-200'></div>
                 </div>
                 <div>
-                    <button className='my-5 px-6 py-1 btn text-white bg-red-600 hover:bg-red-500'>
+                    <button className='my-5 px-6 py-1 btn text-white border-0 bg-red-600 hover:bg-red-500'>
                         <FontAwesomeIcon className='text-red-500 text-lg mx-3 bg-slate-100 p-2 rounded-full' icon={faGoogle} />
                         Login with Google
                     </button>
