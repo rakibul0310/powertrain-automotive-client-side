@@ -10,7 +10,7 @@ const Home = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch("review.json")
+        fetch("http://localhost:5000/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -24,7 +24,7 @@ const Home = () => {
                 <h1 className='text-3xl font-bold text-primary underline decoration-secondary text-center my-9'>Reviews({reviews.length})</h1>
                 <div className='w-full md:w-1/2 carousel'>
                     {
-                        reviews.map((reviewItem, index) => <Reviews itemIndex={index} reviewItem={reviewItem} length={reviews.length}></Reviews>)
+                        reviews.map((reviewItem, index) => <Reviews key={reviewItem._id} itemIndex={index} reviewItem={reviewItem} length={reviews.length}></Reviews>)
                     }
                 </div>
             </div>

@@ -9,7 +9,6 @@ const Header = () => {
         <li><Link to="/technologies">Technologies</Link></li>
         <li><Link to="/investorrelations">Investor Relations</Link></li>
         <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/about">About</Link></li>
     </>
     return (
         <div className="navbar bg-primary text-base-100">
