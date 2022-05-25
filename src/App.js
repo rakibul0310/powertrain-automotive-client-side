@@ -4,6 +4,7 @@ import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
 import Home from './components/Home/Home';
 import InvestorRelations from './components/InvestorRelations/InvestorRelations';
+import Login from './components/Login/Login';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Technologies from './components/Technologies/Technologies';
@@ -18,6 +19,7 @@ function App() {
         <Route path='/contact' element={<ContactUs />}></Route>
         <Route path='/investorrelations' element={<InvestorRelations />}></Route>
         <Route path='/anualreport' element={<AnualReport />}></Route>
+        <Route path='/login' element={<Login />}></Route>
       </Routes>
       <Footer />
     </div>
