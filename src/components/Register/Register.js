@@ -41,8 +41,37 @@ const Register = () => {
                         localStorage.setItem('accessToken', data.accessToken);
                     })
             }
+
+            // const getProfile = async (email, profile) => {
+            //     const url = `http://localhost:5000/getprofile?email=${email}`;
+            //     await fetch(url)
+            //         .then(res => res.json())
+            //         .then(data => {
+            //             profile = data;
+            //             setNewProfile(data);
+            //             console.log("newprofile", newProfile)
+            //         })
+            // }
+
+            const updateProfile = async (email) => {
+                const newProfile = {
+                    name: googleUser?.user.displayName || user?.user.displayName,
+                    email: googleUser?.user.email || user?.user.email,
+                }
+                const url = `http://localhost:5000/updateprofile/${email}`;
+                await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        "content-type": 'application/json'
+                    },
+                    body: JSON.stringify(newProfile),
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+            }
+
+            updateProfile(googleUser?.user.email || user?.user.email)
             getAccesToken();
-            console.log(user?.user.email || googleUser?.user.email);
             return navigate(from, { replace: true });
         }
     }, [user, googleUser, navigate, from])
