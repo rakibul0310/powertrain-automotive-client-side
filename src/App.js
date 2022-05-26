@@ -3,6 +3,8 @@ import './App.css';
 import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
 import Dashboard from './components/Dashboard/Dashboard';
+import MyDashboard from './components/Dashboard/MyDashboard';
+import MyProfile from './components/Dashboard/MyProfile';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Home from './components/Home/Home';
 import InvestorRelations from './components/InvestorRelations/InvestorRelations';
@@ -33,7 +35,10 @@ function App() {
         <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard />
-        </RequireAuth>}></Route>
+        </RequireAuth>}>
+          <Route path='/dashboard' element={<MyDashboard />}></Route>
+          <Route path='myprofile' element={<MyProfile />}></Route>
+        </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
       <Footer />

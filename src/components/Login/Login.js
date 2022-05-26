@@ -37,21 +37,15 @@ const Login = () => {
                     })
             }
 
-            // const getProfile = async (email, profile) => {
-            //     const url = `http://localhost:5000/getprofile?email=${email}`;
-            //     await fetch(url)
-            //         .then(res => res.json())
-            //         .then(data => {
-            //             profile = data;
-            //             setNewProfile(data);
-            //             console.log("newprofile", newProfile)
-            //         })
-            // }
-
             const updateProfile = async (email) => {
                 const newProfile = {
                     name: googleUser?.user.displayName || user?.user.displayName,
                     email: googleUser?.user.email || user?.user.email,
+                    photoURL: "https://i.ibb.co/b64Rx7t/5907.jpg",
+                    education: "",
+                    location: "",
+                    phoneNumber: "",
+                    linkedIn: ""
                 }
                 const url = `http://localhost:5000/updateprofile/${email}`;
                 await fetch(url, {
