@@ -1,9 +1,9 @@
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import React, { useEffect } from 'react';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
@@ -15,11 +15,39 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleTryAgain = () => window.location.reload()
 
-    if (error || updating) {
+    useEffect(() => {
+        if (user || googleUser) {
+            const getAccesToken = async () => {
+                await fetch(`http://localhost:5000/login`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: googleUser?.user.email || user?.user.email })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('accessToken', data.accessToken);
+                    })
+            }
+            getAccesToken();
+            console.log(user?.user.email || googleUser?.user.email);
+            return navigate(from, { replace: true });
+        }
+    }, [user, googleUser, navigate, from])
+
+    if (error || updateError || googleError) {
         return (
             <div className='min-h-screen text-red-500 flex flex-col justify-center items-center text-3xl text-center'>
                 <p>Error: {error?.message || updateError?.message}</p>
@@ -27,7 +55,7 @@ const Register = () => {
             </div>
         );
     }
-    if (loading || updating) {
+    if (loading || updating || googleLoading) {
         return <Loading />;
     }
 
@@ -41,6 +69,11 @@ const Register = () => {
         }
         reset();
     };
+
+    const handleGoogleLogin = async () => {
+        await signInWithGoogle();
+    }
+
     return (
         <div>
             <div className='flex flex-col justify-center items-center min-h-screen'>
@@ -62,7 +95,7 @@ const Register = () => {
                         <div className='w-[80px] h-[3px] bg-slate-200'></div>
                     </div>
                     <div>
-                        <button className='my-5 px-6 py-1 btn text-white border-0 bg-red-600 hover:bg-red-500'>
+                        <button onClick={handleGoogleLogin} className='my-5 px-6 py-1 btn text-white border-0 bg-red-600 hover:bg-red-500'>
                             <FontAwesomeIcon className='text-red-500 text-lg mx-3 bg-slate-100 p-2 rounded-full' icon={faGoogle} />
                             Login with Google
                         </button>

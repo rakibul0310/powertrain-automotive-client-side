@@ -6,6 +6,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Home from './components/Home/Home';
 import InvestorRelations from './components/InvestorRelations/InvestorRelations';
 import Login from './components/Login/Login';
+import PageNotFound from './components/PageNotFound/PageNotFound';
 import Register from './components/Register/Register';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
@@ -24,6 +25,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
+        <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
     </div>

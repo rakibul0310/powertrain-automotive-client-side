@@ -41,7 +41,7 @@ const Login = () => {
             }
             getAccesToken();
             console.log(user?.user.email || googleUser?.user.email);
-            // return navigate(from, { replace: true });
+            return navigate(from, { replace: true });
         }
     }, [user, googleUser, navigate, from])
 
