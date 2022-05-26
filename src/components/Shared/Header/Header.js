@@ -19,6 +19,10 @@ const Header = () => {
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/technologies">Technologies</Link></li>
+        <li><Link to="/demodashboard">DemoDashboard</Link></li>
+        {
+            user && <li><Link to="/dashboard">Dashboard</Link></li>
+        }
         <li><Link to="/investorrelations">Investor Relations</Link></li>
         <li><Link to="/contact">Contact</Link></li>
     </>

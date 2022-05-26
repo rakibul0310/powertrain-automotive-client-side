@@ -126,7 +126,7 @@ const Purchase = () => {
                         <label htmlFor="quantity" className='mb-2 font-medium'>Quantity</label>
                         <input onChange={handleQuantity} className='input input-bordered input-success w-full max-w-xs' type="number" id='quantity' name='quantity' defaultValue={item.minOrder} required />
                     </form>
-                    <div className="card-actions justify-end">
+                    <div className="card-actions justify-start mt-3">
                         {
                             crossQuantity ? <button onClick={handlePlaceOrder} className="btn btn-primary">Place order</button> :
                                 <input className="btn btn-primary" type="submit" value="Place order" disabled />

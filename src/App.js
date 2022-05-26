@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
+import Dashboard from './components/Dashboard/Dashboard';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Home from './components/Home/Home';
 import InvestorRelations from './components/InvestorRelations/InvestorRelations';
@@ -30,6 +31,9 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
+        <Route path='/dashboard' element={<RequireAuth>
+          <Dashboard />
+        </RequireAuth>}></Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
