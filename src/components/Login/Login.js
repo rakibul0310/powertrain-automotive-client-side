@@ -9,20 +9,17 @@ import auth from '../../firebase.init';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-
-    const navigate = useNavigate();
-    const location = useLocation();
-
-    const from = location.state?.from?.pathname || "/";
-
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
         if (user || googleUser) {
@@ -39,15 +36,43 @@ const Login = () => {
                         localStorage.setItem('accessToken', data.accessToken);
                     })
             }
+
+            // const getProfile = async (email, profile) => {
+            //     const url = `http://localhost:5000/getprofile?email=${email}`;
+            //     await fetch(url)
+            //         .then(res => res.json())
+            //         .then(data => {
+            //             profile = data;
+            //             setNewProfile(data);
+            //             console.log("newprofile", newProfile)
+            //         })
+            // }
+
+            const updateProfile = async (email) => {
+                const newProfile = {
+                    name: googleUser?.user.displayName || user?.user.displayName,
+                    email: googleUser?.user.email || user?.user.email,
+                }
+                console.log("new profile", newProfile)
+                const url = `http://localhost:5000/updateprofile/${email}`;
+                await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        "content-type": 'application/json'
+                    },
+                    body: JSON.stringify(newProfile),
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+            }
+
+            updateProfile(googleUser?.user.email || user?.user.email)
             getAccesToken();
-            console.log(user?.user.email || googleUser?.user.email);
             return navigate(from, { replace: true });
         }
     }, [user, googleUser, navigate, from])
 
-
-    const handleTryAgain = () => window.location.reload()
-
+    const handleTryAgain = () => window.location.reload();
     if (error || googleError) {
         return (
             <div className='min-h-screen text-red-500 flex flex-col justify-center items-center text-3xl text-center'>
