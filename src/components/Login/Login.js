@@ -53,7 +53,6 @@ const Login = () => {
                     name: googleUser?.user.displayName || user?.user.displayName,
                     email: googleUser?.user.email || user?.user.email,
                 }
-                console.log("new profile", newProfile)
                 const url = `http://localhost:5000/updateprofile/${email}`;
                 await fetch(url, {
                     method: 'PUT',

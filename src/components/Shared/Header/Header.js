@@ -1,15 +1,41 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 
 import './Header.css';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate()
+
+    const handleSignOut = () => {
+        signOut(auth)
+        navigate("/")
+    }
+
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/technologies">Technologies</Link></li>
         <li><Link to="/investorrelations">Investor Relations</Link></li>
         <li><Link to="/contact">Contact</Link></li>
     </>
+
+    const handleTryAgain = () => window.location.reload();
+    if (error) {
+        return (
+            <div className='min-h-screen text-red-500 flex flex-col justify-center items-center text-3xl text-center'>
+                <p>Error: {error?.message}</p>
+                <button onClick={handleTryAgain} className='btn px-6 py-2 btn-primaty text-xl font-medium mt-5'>Try again</button>
+            </div>
+        );
+    }
+    if (loading) {
+        return <Loading />;
+    }
+
     return (
         <div className="navbar bg-primary text-base-100">
             <div className="navbar-start">
@@ -32,7 +58,10 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login" className="btn btn-secondary text-base-100">Login</Link>
+                {
+                    user ? <button onClick={handleSignOut} className="btn btn-error text-base-100">Logout</button> :
+                        <Link to="/login" className="btn btn-secondary text-base-100">Login</Link>
+                }
             </div>
         </div>
     );

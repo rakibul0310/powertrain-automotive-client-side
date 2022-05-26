@@ -7,7 +7,9 @@ import Home from './components/Home/Home';
 import InvestorRelations from './components/InvestorRelations/InvestorRelations';
 import Login from './components/Login/Login';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Purchase from './components/Purchase/Purchase';
 import Register from './components/Register/Register';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Technologies from './components/Technologies/Technologies';
@@ -19,6 +21,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/technologies' element={<Technologies />}></Route>
+        <Route path='/purchase/:id' element={<RequireAuth>
+          <Purchase />
+        </RequireAuth>}></Route>
         <Route path='/contact' element={<ContactUs />}></Route>
         <Route path='/investorrelations' element={<InvestorRelations />}></Route>
         <Route path='/anualreport' element={<AnualReport />}></Route>
