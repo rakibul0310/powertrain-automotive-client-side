@@ -59,11 +59,11 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user && <h5>{user.displayName}</h5>
-                }
-                {
                     user ? <button onClick={handleSignOut} className="btn btn-error text-base-100">Logout</button> :
                         <Link to="/login" className="btn btn-secondary text-base-100">Login</Link>
+                }
+                {
+                    user && <h5 className='btn btn-circle btn-outline bg-[#333333] text-base-100 text-sm font-light p-1 mx-3'>{user.displayName}</h5>
                 }
             </div>
         </div>

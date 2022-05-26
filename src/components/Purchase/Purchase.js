@@ -70,7 +70,6 @@ const Purchase = () => {
             .then(res => res.json())
             .then(data => console.log(data))
         toast.success("Order placed successfully")
-        console.log(orderItem);
 
         const updatedItem = {
             name: item.name,
