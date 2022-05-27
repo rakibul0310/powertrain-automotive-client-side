@@ -24,6 +24,7 @@ const Header = () => {
         }
         <li><Link to="/investorrelations">Investor Relations</Link></li>
         <li><Link to="/blog">Blogs</Link></li>
+        <li><Link to="/portfolio">My Portfolio</Link></li>
     </>
 
     const handleTryAgain = () => window.location.reload();

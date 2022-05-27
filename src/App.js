@@ -23,6 +23,7 @@ import Technologies from './components/Technologies/Technologies';
 import MyOrders from './components/Dashboard/UserDashboard/MyOrders';
 import AddReview from './components/Dashboard/UserDashboard/AddReview';
 import Blogs from './components/Blogs/Blogs';
+import MyPortfolio from './components/MyPortfolio/MyPortfolio';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path='addreview' element={<AddReview />}></Route>
         </Route>
         <Route path='/blog' element={<Blogs />}></Route>
+        <Route path='/portfolio' element={<MyPortfolio />}></Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
