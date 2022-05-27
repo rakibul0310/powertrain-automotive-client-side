@@ -5,6 +5,7 @@ import ContactUs from './components/ContactUs/ContactUs';
 import AddProduct from './components/Dashboard/AddProduct';
 import Dashboard from './components/Dashboard/Dashboard';
 import ManageOrders from './components/Dashboard/ManageOrders';
+import ManageProducts from './components/Dashboard/ManageProducts';
 import MyDashboard from './components/Dashboard/MyDashboard';
 import MyProfile from './components/Dashboard/MyProfile';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
@@ -42,6 +43,7 @@ function App() {
           <Route path='myprofile' element={<MyProfile />}></Route>
           <Route path='manageorders' element={<ManageOrders />}></Route>
           <Route path='addproduct' element={<AddProduct />}></Route>
+          <Route path='manageproducts' element={<ManageProducts />}></Route>
         </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
