@@ -120,7 +120,7 @@ const Purchase = () => {
                         <input onChange={handleAddress} className='input input-bordered input-success w-full max-w-xs' type="text" id='address' name='address' />
                         <label htmlFor="mobile" className='mb-2 font-medium'>Mobile</label>
                         <input onChange={handleMobile} className='input input-bordered input-success w-full max-w-xs' type="number" id='mobile' name='mobile' />
-                        <label htmlFor="pother" className='mb-2 font-medium'>Others</label>
+                        <label htmlFor="other" className='mb-2 font-medium'>Others</label>
                         <input onChange={handleOther} className='input input-bordered input-success w-full max-w-xs' type="text" id='other' name='other' />
                         {/* {errors.exampleRequired && <span>This field is required</span>} */}
                         <label htmlFor="quantity" className='mb-2 font-medium'>Quantity</label>

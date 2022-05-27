@@ -57,11 +57,11 @@ const Register = () => {
                 const newProfile = {
                     name: googleUser?.user.displayName || user?.user.displayName,
                     email: googleUser?.user.email || user?.user.email,
-                    photoURL: "https://i.ibb.co/b64Rx7t/5907.jpg",
+                    photoURL: "https://i.ibb.co/HYsFTYc/User-Profile-PNG-Image.png",
+                    mobile: "",
                     education: "",
-                    location: "",
-                    phoneNumber: "",
-                    linkedIn: ""
+                    address: "",
+                    linkedin: ""
                 }
                 const url = `http://localhost:5000/updateprofile/${email}`;
                 await fetch(url, {
