@@ -21,6 +21,7 @@ import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Technologies from './components/Technologies/Technologies';
 import MyOrders from './components/Dashboard/UserDashboard/MyOrders';
+import AddReview from './components/Dashboard/UserDashboard/AddReview';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='manageproducts' element={<ManageProducts />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
           <Route path='myorders' element={<MyOrders />}></Route>
+          <Route path='addreview' element={<AddReview />}></Route>
         </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
