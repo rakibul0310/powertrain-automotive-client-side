@@ -52,11 +52,13 @@ const Purchase = () => {
     const handlePlaceOrder = () => {
         const orderItem = {
             email: user.email,
+            name: user.displayName,
             productName: item.name,
             address: address,
             mobile: mobile,
             productId: item._id,
             quantity: orderQuantity,
+            price: parseInt(item.price) * parseInt(orderQuantity),
             other: other
         }
 

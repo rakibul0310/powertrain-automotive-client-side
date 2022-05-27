@@ -24,6 +24,7 @@ import MyOrders from './components/Dashboard/UserDashboard/MyOrders';
 import AddReview from './components/Dashboard/UserDashboard/AddReview';
 import Blogs from './components/Blogs/Blogs';
 import MyPortfolio from './components/MyPortfolio/MyPortfolio';
+import Payment from './components/Dashboard/Payment';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/forgotpassword' element={<ForgotPassword />}></Route>
+        <Route path='/payment/:id' element={<Payment />}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard />
         </RequireAuth>}>
