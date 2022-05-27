@@ -3,6 +3,7 @@ import './App.css';
 import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
 import Dashboard from './components/Dashboard/Dashboard';
+import ManageOrders from './components/Dashboard/ManageOrders';
 import MyDashboard from './components/Dashboard/MyDashboard';
 import MyProfile from './components/Dashboard/MyProfile';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
@@ -38,6 +39,7 @@ function App() {
         </RequireAuth>}>
           <Route path='/dashboard' element={<MyDashboard />}></Route>
           <Route path='myprofile' element={<MyProfile />}></Route>
+          <Route path='manageorders' element={<ManageOrders />}></Route>
         </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
