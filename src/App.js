@@ -4,6 +4,7 @@ import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
 import AddProduct from './components/Dashboard/AddProduct';
 import Dashboard from './components/Dashboard/Dashboard';
+import MakeAdmin from './components/Dashboard/MakeAdmin';
 import ManageOrders from './components/Dashboard/ManageOrders';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import MyDashboard from './components/Dashboard/MyDashboard';
@@ -44,6 +45,7 @@ function App() {
           <Route path='manageorders' element={<ManageOrders />}></Route>
           <Route path='addproduct' element={<AddProduct />}></Route>
           <Route path='manageproducts' element={<ManageProducts />}></Route>
+          <Route path='makeadmin' element={<MakeAdmin />}></Route>
         </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>
