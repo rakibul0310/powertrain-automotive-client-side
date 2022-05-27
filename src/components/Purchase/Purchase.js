@@ -97,20 +97,20 @@ const Purchase = () => {
         <div className='py-9 px-3 flex justify-center items-center'>
             <div className="card lg:card-side bg-[#ecebe8] w-full md:w-3/4 shadow-xl">
                 <figure className='flex flex-col justify-center items-center p-6'>
-                    <img src={item.img} alt="Album" />
+                    <img className='w-fit' src={item.img} alt="Album" />
                     <h2>Name: {item.name}</h2>
                     <p>Min order: {item.minOrder} units</p>
                     <p>Price: ${item.price} /unit</p>
                     <br />
                     <p>Features: <br />
                     </p>
-                    <ol>
+                    <ol className=''>
                         {
                             item?.features?.map((feature, index) => <li key={index}>{feature}</li>)
                         }
                     </ol>
                 </figure>
-                <div className="card-body">
+                <div className="card-body w-full lg:w-1/2">
                     <form className='form-control justify-start items-start text-left w-full' >
                         <label htmlFor="email" className='font-medium'>Email</label>
                         <input className='input input-bordered input-success w-full max-w-xs my-3' type="email" id='email' name='email' defaultValue={user.email} disabled />

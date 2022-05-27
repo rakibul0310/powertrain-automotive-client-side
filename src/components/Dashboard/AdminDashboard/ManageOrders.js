@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading/Loading';
-import DeleteConfrimModal from './DeleteConfrimModal';
+import Loading from '../../Shared/Loading/Loading';
+import DeleteConfrimModal from '../AdminDashboard/DeleteConfrimModal';
 import OrderRow from './OrderRow';
 
 const ManageOrders = () => {

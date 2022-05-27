@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading/Loading';
+import Loading from '../../Shared/Loading/Loading';
 import MakeAdminModal from './MakeAdminModal';
 import UserRow from './UserRow';
 

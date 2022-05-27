@@ -2,11 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AnualReport from './components/AnualReport/AnualReport';
 import ContactUs from './components/ContactUs/ContactUs';
-import AddProduct from './components/Dashboard/AddProduct';
+import AddProduct from './components/Dashboard/AdminDashboard/AddProduct';
 import Dashboard from './components/Dashboard/Dashboard';
-import MakeAdmin from './components/Dashboard/MakeAdmin';
-import ManageOrders from './components/Dashboard/ManageOrders';
-import ManageProducts from './components/Dashboard/ManageProducts';
+import MakeAdmin from './components/Dashboard//AdminDashboard/MakeAdmin';
+import ManageOrders from './components/Dashboard/AdminDashboard/ManageOrders';
+import ManageProducts from './components/Dashboard/AdminDashboard/ManageProducts';
 import MyDashboard from './components/Dashboard/MyDashboard';
 import MyProfile from './components/Dashboard/MyProfile';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
@@ -20,6 +20,7 @@ import RequireAuth from './components/RequireAuth/RequireAuth';
 import Footer from './components/Shared/Footer/Footer';
 import Header from './components/Shared/Header/Header';
 import Technologies from './components/Technologies/Technologies';
+import MyOrders from './components/Dashboard/UserDashboard/MyOrders';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <Route path='addproduct' element={<AddProduct />}></Route>
           <Route path='manageproducts' element={<ManageProducts />}></Route>
           <Route path='makeadmin' element={<MakeAdmin />}></Route>
+          <Route path='myorders' element={<MyOrders />}></Route>
         </Route>
         <Route path='*' element={<PageNotFound />}></Route>
       </Routes>

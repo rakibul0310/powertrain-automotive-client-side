@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import Loading from '../Shared/Loading/Loading';
+import Loading from '../../Shared/Loading/Loading';
 import DeletePartsModal from './DeletePartsModal';
 import ProductRow from './ProductRow';
 

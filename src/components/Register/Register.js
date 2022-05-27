@@ -57,7 +57,7 @@ const Register = () => {
                 const newProfile = {
                     name: googleUser?.user.displayName || user?.user.displayName,
                     email: googleUser?.user.email || user?.user.email,
-                    photoURL: "https://i.ibb.co/HYsFTYc/User-Profile-PNG-Image.png",
+                    photoURL: googleUser?.user.photoURL || "https://i.ibb.co/HYsFTYc/User-Profile-PNG-Image.png",
                     mobile: "",
                     education: "",
                     address: "",
