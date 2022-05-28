@@ -18,19 +18,19 @@ const ManageOrders = () => {
     }
 
     return (
-        <div className=''>
+        <div className='w-full md:px-10'>
             <h2 className="text-2xl text-center my-5">Manage Orders: {orders?.length}</h2>
             <div className="overflow-x-auto">
-                <table className="table table-compact w-full">
-                    <thead>
+                <table className="table-auto table-compact w-full">
+                    <thead className='bg-secondary'>
                         <tr>
                             <th></th>
-                            <th>Email</th>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Payment</th>
-                            <th>Status</th>
-                            <th>Action</th>
+                            <th className='border-b-[1px]'>Email</th>
+                            <th className='border-b-[1px]'>Product</th>
+                            <th className='border-b-[1px]'>Quantity</th>
+                            <th className='border-b-[1px]'>Payment</th>
+                            <th className='border-b-[1px]'>Status</th>
+                            <th className='border-b-[1px]'>Action</th>
                         </tr>
                     </thead>
                     <tbody>

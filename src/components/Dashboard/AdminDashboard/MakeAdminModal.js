@@ -29,7 +29,7 @@ const MakeAdminModal = ({ makingAdmin, refetch, setMakingAdmin }) => {
             <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
-                    <h3 className="font-bold py-4 text-lg text-red-500">{`Are you sure you want to delete  ${name}!`}</h3>
+                    <h3 className="font-bold py-4 text-lg text-red-500">{`Are you sure you want to make admin  ${name}!`}</h3>
                     <div className="modal-action">
                         <button onClick={() => handleDelete()} className="btn btn-xs btn-error">Confrim</button>
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>

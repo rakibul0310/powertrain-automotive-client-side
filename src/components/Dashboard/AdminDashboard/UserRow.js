@@ -1,16 +1,15 @@
 import React from 'react';
 
 const UserRow = ({ user, index, refetch, setMakingAdmin }) => {
-    const { name, email, role } = user;
+    const { email, role } = user;
     return (
         <tr>
-            <th>{index + 1}</th>
-            <td>{name}</td>
-            <td>{email}</td>
+            <th className='border-[1px]'>{index + 1}</th>
+            <td className='border-[1px]'>{email}</td>
             {
-                role ? <td>{role}</td> : <td>user</td>
+                role ? <td className='border-[1px]'>{role}</td> : <td className='border-[1px]'>user</td>
             }
-            <td>
+            <td className='border-[1px]'>
                 {
                     role ? <button className='btn btn-xs btn-disabled'>Make admin</button> :
                         <label onClick={() => setMakingAdmin(user)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error">Make admin</label>

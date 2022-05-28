@@ -6,24 +6,24 @@ const OrderRow = ({ order, index, refetch, setDeletingOrder }) => {
 
     return (
         <tr>
-            <th>{index + 1}</th>
-            <td>{email}</td>
-            <td>{productName}</td>
-            <td>{quantity}</td>
-            <td>
+            <th className='border-[1px]'>{index + 1}</th>
+            <td className='border-[1px]'>{email}</td>
+            <td className='border-[1px]'>{productName}</td>
+            <td className='border-[1px]'>{quantity}</td>
+            <td className='border-[1px]'>
                 {
                     transactionId ? transactionId : "--"
                 }
             </td>
-            <td>
+            <td className='border-[1px]'>
                 {
                     status ? status : "processing"
                 }
             </td>
-            <td>
+            <td className='border-[1px]'>
                 {
-                    !paid ? <><label onClick={() => setDeletingOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error mb-2">Cancle</label><br /></> :
-                        <><label htmlFor="delete-confirm-modal" className="btn btn-xs btn-disabled mb-2">Cancle</label><br /></>
+                    !paid ? <><label onClick={() => setDeletingOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error mb-2">Cancel</label><br /></> :
+                        <><label htmlFor="delete-confirm-modal" className="btn btn-xs btn-disabled mb-2">Cancel</label><br /></>
                 }
                 {
                     paid ? <button className='btn btn-disabled btn-xs'>paid</button> :

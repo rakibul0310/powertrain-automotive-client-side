@@ -14,6 +14,7 @@ const MyProfile = () => {
     const [linkedin, setLinkedin] = useState("");
     const [update, setUpdate] = useState(false);
     const [user] = useAuthState(auth);
+
     const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://sheltered-wave-82643.herokuapp.com/getprofile?email=${user.email}`).then(res => res.json()))
     if (isLoading) {
         return <Loading />
@@ -75,7 +76,7 @@ const MyProfile = () => {
                 <figure className='flex flex-col justify-center items-center p-6 w-full md:w-1/2'>
                     <img src={profile.photoURL} alt="Album" />
                     <div>
-                        <h2>Name: {profile.name}</h2>
+                        <h2>Name: {user.displayName}</h2>
                         <p>Email: {profile.email}</p>
                         {
                             update ? <>

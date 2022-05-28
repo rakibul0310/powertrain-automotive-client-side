@@ -18,17 +18,16 @@ const MakeAdmin = () => {
     }
 
     return (
-        <div className=''>
+        <div className='w-full px-10'>
             <h2 className="text-2xl text-center my-5">Users: {users?.length}</h2>
             <div className="overflow-x-auto">
-                <table className="table table-compact w-full">
-                    <thead>
+                <table className="table-auto table-compact w-full">
+                    <thead className='bg-secondary'>
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Role</th>
-                            <th>Action</th>
+                            <th className='border-b-[1px]'>Email</th>
+                            <th className='border-b-[1px]'>Role</th>
+                            <th className='border-b-[1px]'>Action</th>
                         </tr>
                     </thead>
                     <tbody>

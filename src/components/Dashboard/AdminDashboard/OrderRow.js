@@ -31,35 +31,39 @@ const OrderRow = ({ order, index, refetch, setDeletingOrder }) => {
 
     return (
         <tr>
-            <th>{index + 1}</th>
-            <td>{email}</td>
-            <td>{productName}</td>
-            <td>{quantity}</td>
-            <td>
+            <th className='border-[1px]'>{index + 1}</th>
+            <td className='border-[1px]'>{email}</td>
+            <td className='border-[1px]'>{productName}</td>
+            <td className='border-[1px]'>{quantity}</td>
+            <td className='border-[1px]'>
                 {
                     paid ? "paid" : "unpaid"
                 }
             </td>
-            <td>
-                <select onChange={handleStatus} class="select input-bordered w-full max-w-xs">
+            <td className='border-[1px]'>
+                <select onChange={handleStatus} className="select input-bordered w-full max-w-xs">
                     {
-                        status ? <option value={status}>{status}</option> :
-                            <option value="Processing">Processing</option>
+                        status === "Shiped" ? <><option value={status}>{status}</option>
+                            <option value="Processing">Processing</option></> :
+                            <>
+                                <option value="Processing">Processing</option>
+                                <option value="Shiped">Shiped</option>
+                            </>
                     }
-                    {
-                        status ? <option value="Processing">Processing</option> :
+                    {/* {
+                        !status ? <option value="Processing">Processing</option> :
                             <option value="Shiped">Shiped</option>
-                    }
+                    } */}
                 </select>
             </td>
-            <td>
+            <td className='border-[1px]'>
                 {
                     paid ? <><label htmlFor="delete-confirm-modal" className="btn btn-xs btn-disabled mb-2">Delete</label><br /></> :
                         <><label onClick={() => setDeletingOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-xs btn-error mb-2">Delete</label><br /></>
                 }
                 <label onClick={handleUpdate} htmlFor="delete-confirm-modal" className="btn btn-xs btn-secondary">Update</label>
+                <ToastContainer />
             </td>
-            <ToastContainer />
         </tr>
     );
 };
