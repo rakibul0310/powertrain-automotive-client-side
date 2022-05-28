@@ -31,7 +31,7 @@ const AddProduct = () => {
                         price: parseInt(data.price)
                     }
 
-                    fetch('http://localhost:5000/parts', {
+                    fetch('https://sheltered-wave-82643.herokuapp.com/parts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

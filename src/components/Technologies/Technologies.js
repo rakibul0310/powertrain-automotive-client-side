@@ -4,7 +4,7 @@ import Parts from '../Parts/Parts';
 const Technologies = () => {
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/parts")
+        fetch("https://sheltered-wave-82643.herokuapp.com/parts")
             .then(res => res.json())
             .then(data => setParts(data))
     }, []);

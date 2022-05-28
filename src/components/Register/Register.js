@@ -29,7 +29,7 @@ const Register = () => {
     useEffect(() => {
         if (user || googleUser) {
             const getAccesToken = async () => {
-                await fetch(`http://localhost:5000/login`, {
+                await fetch(`https://sheltered-wave-82643.herokuapp.com/login`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -43,7 +43,7 @@ const Register = () => {
             }
 
             // const getProfile = async (email, profile) => {
-            //     const url = `http://localhost:5000/getprofile?email=${email}`;
+            //     const url = `https://sheltered-wave-82643.herokuapp.com/getprofile?email=${email}`;
             //     await fetch(url)
             //         .then(res => res.json())
             //         .then(data => {
@@ -63,7 +63,7 @@ const Register = () => {
                     address: "",
                     linkedin: ""
                 }
-                const url = `http://localhost:5000/updateprofile/${email}`;
+                const url = `https://sheltered-wave-82643.herokuapp.com/updateprofile/${email}`;
                 await fetch(url, {
                     method: 'PUT',
                     headers: {

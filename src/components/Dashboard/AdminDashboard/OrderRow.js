@@ -14,7 +14,7 @@ const OrderRow = ({ order, index, refetch, setDeletingOrder }) => {
         const newStatus = {
             status: status
         }
-        fetch(`http://localhost:5000/status/${_id}`, {
+        fetch(`https://sheltered-wave-82643.herokuapp.com/status/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

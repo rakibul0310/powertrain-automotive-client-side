@@ -14,7 +14,7 @@ const MyProfile = () => {
     const [linkedin, setLinkedin] = useState("");
     const [update, setUpdate] = useState(false);
     const [user] = useAuthState(auth);
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/getprofile?email=${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://sheltered-wave-82643.herokuapp.com/getprofile?email=${user.email}`).then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }
@@ -47,7 +47,7 @@ const MyProfile = () => {
             address: address,
             linkedin: linkedin
         }
-        const url = `http://localhost:5000/updateprofile/${user.email}`;
+        const url = `https://sheltered-wave-82643.herokuapp.com/updateprofile/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

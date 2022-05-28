@@ -6,9 +6,9 @@ const Reviews = ({ reviewItem, itemIndex, length }) => {
     const Reviweslength = length;
     return (
         <div id={`slide${index}`} className="carousel-item h-[400px] relative w-full">
-            <article className='bg-[#FBFAF8] shadow-md rounded-md my-6 p-4'>
+            <article className='bg-[#FBFAF8] shadow-md rounded-md my-6 p-4 w-full'>
                 <div className="flex items-center mb-4 space-x-4">
-                    <img className="w-10 h-10 rounded-full" src={img} alt="" />
+                    <img className="w-10 h-10 rounded-full" src={img} alt="" width={40} height={40} />
                     <div className="space-y-1 font-medium">
                         <p>{name}</p>
                     </div>
@@ -24,7 +24,9 @@ const Reviews = ({ reviewItem, itemIndex, length }) => {
                 <h3 className="ml-2 text-sm font-semibold text-gray-900">User rating- {rating}</h3>
 
                 <footer className="mb-5 text-sm text-gray-500 dark:text-gray-400"><p>Reviewed on March 3, 2017</p></footer>
-                <p className="mb-2 font-light text-gray-500 dark:text-gray-400">{review}</p>
+                <div className='w-full'>
+                    <p className="mb-2 font-light text-gray-500 dark:text-gray-400 w-full">{review}</p>
+                </div>
             </article>
             <div className="absolute flex justify-between transform -translate-y-1/2 left-[100px] lg:left-[250px] right-[100px] lg:right-[250px] bottom-[20px] lg:bottom-[50px]">
                 <a href={index === 0 ? `#slide${Reviweslength - 1}` : `#slide${index - 1}`} className="btn btn-circle">❮</a>

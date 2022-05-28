@@ -15,7 +15,7 @@ const Purchase = () => {
     const [mobile, setMobile] = useState("");
     const [other, setOther] = useState("");
     useEffect(() => {
-        const url = `http://localhost:5000/purchase/${id}`;
+        const url = `https://sheltered-wave-82643.herokuapp.com/purchase/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -62,7 +62,7 @@ const Purchase = () => {
             other: other
         }
 
-        fetch('http://localhost:5000/placeorder', {
+        fetch('https://sheltered-wave-82643.herokuapp.com/placeorder', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'
@@ -83,7 +83,7 @@ const Purchase = () => {
             price: item.price
         }
 
-        const url = `http://localhost:5000/updateparts/${item._id}`;
+        const url = `https://sheltered-wave-82643.herokuapp.com/updateparts/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

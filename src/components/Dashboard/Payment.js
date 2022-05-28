@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L43RjDIsxhoLpzhBZbvrBRipEZ1hzpUI4dBE
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://sheltered-wave-82643.herokuapp.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
@@ -25,14 +25,14 @@ const Payment = () => {
 
     return (
         <div className='flex flex-col justify-center items-center py-9'>
-            <div class="card w-50 max-w-md bg-base-100 shadow-xl my-12">
-                <div class="card-body">
-                    <h2 class="card-title">Please Pay for {order.name}</h2>
+            <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
+                <div className="card-body">
+                    <h2 className="card-title">Please Pay for {order.productName}</h2>
                     <p>Please pay: ${order.price}</p>
                 </div>
             </div>
-            <div class="card w-1/2 max-w-md shadow-2xl bg-base-100">
-                <div class="card-body">
+            <div className="card w-1/2 max-w-md shadow-2xl bg-base-100">
+                <div className="card-body">
                     <Elements stripe={stripePromise}>
                         <CheckoutForm order={order} />
                     </Elements>

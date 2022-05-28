@@ -55,14 +55,14 @@ const Blogs = () => {
                 </div>
 
                 <div className='flex flex-col justify-center items-center mb-10 mt-10'>
-                    <h3 className='font-semibold mb-5 text-xl underline'>Q5:  Why you do not set the state directly in React. <br />
+                    <h3 className='font-semibold mb-5 text-xl underline'>Q4:  Why you do not set the state directly in React. <br />
                         For example, if you have const [products, setProducts] = useState([]). <br />
                         Why you do not set products = [...] instead, you use the setProducts</h3>
                     <p className='w-full md:w-3/4'>Because of the following reasons, one should never directly change the state: If you directly alter it, invoking setState() subsequently may just overwrite the update you did. This is not changed when you directly update the state. While a React component can have initial state, its true strength is in changing its state – after all, if we didn't need to change the state, the component shouldn't have any. Only data that changes in our component and is visible in the UI is assigned to state. Rather than explicitly altering the state using this.Unit tests are often automated tests created and executed by software engineers to confirm that a piece of an application (referred to as a "unit") fulfills its design and operates as expected. A unit in procedural programming can be a whole module, although it is most typically a single function or process.</p>
                 </div>
 
                 <div className='flex flex-col justify-center items-center mb-10 mt-10'>
-                    <h3 className='font-semibold mb-5 text-xl underline'>Q4: What is a unit test? Why should write unit tests?</h3>
+                    <h3 className='font-semibold mb-5 text-xl underline'>Q5: What is a unit test? Why should write unit tests?</h3>
                     <p className='w-full md:w-3/4'>Unit tests are often automated tests created and executed by software engineers to confirm that a piece of an application (referred to as a "unit") fulfills its design and operates as expected. A unit in procedural programming can be a whole module, although it is most typically a single function or process.</p>
                 </div>
             </div>

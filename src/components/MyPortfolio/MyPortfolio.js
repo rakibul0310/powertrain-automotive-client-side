@@ -21,6 +21,14 @@ const MyPortfolio = () => {
                             <li>5. Node JS</li>
                             <li>6. MongoDB</li>
                         </ul>
+                        <p className='mt-5 mb-1'>Recent projects:</p>
+                        <ul>
+                            <li className='flex flex-col'>
+                                <a className='text-blue-500 underline decoration-blue-500' href="https://book-inventory-21052.web.app/" target="_blank" rel='noreferrer' >1. Inventory Management</a>
+                                <a className='text-blue-500 underline decoration-blue-500' href="https://dental-care-bc7b9.web.app/" target="_blank" rel='noreferrer' >2. Service Provider</a>
+                                <a className='text-blue-500 underline decoration-blue-500' href="https://incandescent-rugelach-89e11f.netlify.app/" target="_blank" rel='noreferrer' >3. Random Pets</a>
+                            </li>
+                        </ul>
                     </div>
                 </figure>
             </div>
