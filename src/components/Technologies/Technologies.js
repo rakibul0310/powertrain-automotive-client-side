@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import Parts from '../Parts/Parts';
+import useParts from '../../hooks/useParts'
 
 const Technologies = () => {
-    const [parts, setParts] = useState([]);
-    useEffect(() => {
-        fetch("https://sheltered-wave-82643.herokuapp.com/parts")
-            .then(res => res.json())
-            .then(data => setParts(data))
-    }, []);
+    const [parts] = useParts();
     return (
         <div>
             <h1 className='text-3xl font-bold text-primary underline decoration-secondary text-center my-9'>Parts</h1>

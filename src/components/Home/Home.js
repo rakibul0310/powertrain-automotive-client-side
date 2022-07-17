@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useParts from '../../hooks/useParts';
 import InvestorRelations from '../InvestorRelations/InvestorRelations';
 import Notices from '../Notices/Notices';
 import Parts from '../Parts/Parts';
@@ -7,14 +8,10 @@ import Reviews from './Reviews/Reviews';
 import TopBanner from './TopBanner/TopBanner';
 
 const Home = () => {
-    const [parts, setParts] = useState([]);
+    const [parts] = useParts();
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch("https://sheltered-wave-82643.herokuapp.com/parts")
-            .then(res => res.json())
-            .then(data => setParts(data))
-
         fetch("https://sheltered-wave-82643.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
