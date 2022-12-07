@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, email, name } = order;
 
     useEffect(() => {
-        fetch('https://sheltered-wave-82643.herokuapp.com/create-payment-intent', {
+        fetch('https://powertrain.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://sheltered-wave-82643.herokuapp.com/order/${_id}`, {
+            fetch(`https://powertrain.onrender.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L43RjDIsxhoLpzhBZbvrBRipEZ1hzpUI4dBE
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://sheltered-wave-82643.herokuapp.com/order/${id}`;
+    const url = `https://powertrain.onrender.com/order/${id}`;
 
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',

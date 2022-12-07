@@ -31,7 +31,7 @@ const AddProduct = () => {
                         price: parseInt(data.price)
                     }
 
-                    fetch('https://sheltered-wave-82643.herokuapp.com/parts', {
+                    fetch('https://powertrain.onrender.com/parts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

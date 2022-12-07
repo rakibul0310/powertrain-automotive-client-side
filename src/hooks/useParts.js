@@ -4,7 +4,7 @@ const useParts = () => {
     const [partsLoading, setPartsLoading] = useState(true);
     const [parts, setParts] = useState([]);
     useEffect(() => {
-        fetch("https://sheltered-wave-82643.herokuapp.com/parts")
+        fetch("https://powertrain.onrender.com/parts")
             .then(res => res.json())
             .then(data => {
                 setPartsLoading(false);

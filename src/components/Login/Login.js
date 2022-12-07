@@ -24,7 +24,7 @@ const Login = () => {
     useEffect(() => {
         if (user || googleUser) {
             const getAccesToken = async () => {
-                await fetch(`https://sheltered-wave-82643.herokuapp.com/login`, {
+                await fetch(`https://powertrain.onrender.com/login`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -47,7 +47,7 @@ const Login = () => {
                     address: "",
                     linkedin: ""
                 }
-                const url = `https://sheltered-wave-82643.herokuapp.com/updateprofile/${email}`;
+                const url = `https://powertrain.onrender.com/updateprofile/${email}`;
                 await fetch(url, {
                     method: 'PUT',
                     headers: {

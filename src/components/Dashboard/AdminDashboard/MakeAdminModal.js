@@ -7,7 +7,7 @@ const MakeAdminModal = ({ makingAdmin, refetch, setMakingAdmin }) => {
         const role = {
             role: 'admin'
         }
-        fetch(`https://sheltered-wave-82643.herokuapp.com/makeadmin/${_id}`, {
+        fetch(`https://powertrain.onrender.com/makeadmin/${_id}`, {
             method: 'PUT',
             headers: {
                 "content-type": 'application/json',

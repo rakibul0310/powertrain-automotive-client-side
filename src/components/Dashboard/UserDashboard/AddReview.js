@@ -32,7 +32,7 @@ const AddReview = () => {
             rating: rating
         }
 
-        fetch('https://sheltered-wave-82643.herokuapp.com/reviews', {
+        fetch('https://powertrain.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

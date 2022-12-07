@@ -30,7 +30,7 @@ const Register = () => {
     useEffect(() => {
         if (user || googleUser) {
             const getAccesToken = async () => {
-                await fetch(`https://sheltered-wave-82643.herokuapp.com/login`, {
+                await fetch(`https://powertrain.onrender.com/login`, {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -44,7 +44,7 @@ const Register = () => {
             }
 
             // const getProfile = async (email, profile) => {
-            //     const url = `https://sheltered-wave-82643.herokuapp.com/getprofile?email=${email}`;
+            //     const url = `https://powertrain.onrender.com/getprofile?email=${email}`;
             //     await fetch(url)
             //         .then(res => res.json())
             //         .then(data => {
@@ -64,7 +64,7 @@ const Register = () => {
                     address: "",
                     linkedin: ""
                 }
-                const url = `https://sheltered-wave-82643.herokuapp.com/updateprofile/${email}`;
+                const url = `https://powertrain.onrender.com/updateprofile/${email}`;
                 await fetch(url, {
                     method: 'PUT',
                     headers: {

@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [deletingOrder, setDeletingOrder] = useState(null);
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://sheltered-wave-82643.herokuapp.com/myorder?email=${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://powertrain.onrender.com/myorder?email=${user.email}`, {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

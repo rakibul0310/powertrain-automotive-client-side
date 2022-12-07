@@ -7,7 +7,7 @@ import OrderRow from './OrderRow';
 const ManageOrders = () => {
     const [deletingOrder, setDeletingOrder] = useState(null);
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://sheltered-wave-82643.herokuapp.com/orders', {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://powertrain.onrender.com/orders', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }

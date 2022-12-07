@@ -15,7 +15,7 @@ const Purchase = () => {
     const [mobile, setMobile] = useState("");
     const [other, setOther] = useState("");
     useEffect(() => {
-        const url = `https://sheltered-wave-82643.herokuapp.com/purchase/${id}`;
+        const url = `https://powertrain.onrender.com/purchase/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
@@ -62,7 +62,7 @@ const Purchase = () => {
             other: other
         }
 
-        fetch('https://sheltered-wave-82643.herokuapp.com/placeorder', {
+        fetch('https://powertrain.onrender.com/placeorder', {
             method: 'POST',
             headers: {
                 "content-type": 'application/json'
@@ -83,7 +83,7 @@ const Purchase = () => {
             price: item.price
         }
 
-        const url = `https://sheltered-wave-82643.herokuapp.com/updateparts/${item._id}`;
+        const url = `https://powertrain.onrender.com/updateparts/${item._id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

@@ -15,7 +15,7 @@ const MyProfile = () => {
     const [update, setUpdate] = useState(false);
     const [user] = useAuthState(auth);
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://sheltered-wave-82643.herokuapp.com/getprofile?email=${user.email}`).then(res => res.json()))
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://powertrain.onrender.com/getprofile?email=${user.email}`).then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }
@@ -48,7 +48,7 @@ const MyProfile = () => {
             address: address,
             linkedin: linkedin
         }
-        const url = `https://sheltered-wave-82643.herokuapp.com/updateprofile/${user.email}`;
+        const url = `https://powertrain.onrender.com/updateprofile/${user.email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

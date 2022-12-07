@@ -12,7 +12,7 @@ const Home = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch("https://sheltered-wave-82643.herokuapp.com/reviews")
+        fetch("https://powertrain.onrender.com/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
